@@ -43,18 +43,6 @@ while True:
     elif window["~firstbuttonurl~"] == None and not window["~firstbuttontext~"] == None:
         window.Element("ERROR").Update("An error occured! Make sure to add a label for your button!")
 
-    elif window["~firstbuttonurl~"] == None and window["~firstbuttontext~"] == None:
-        try :
-        
-            RPC = Presence(values[0])
-            RPC.connect()
-            RPC.update(state=values[1], details=values[2])
-            window.Element("ERROR").Update("Success! Your rich presence is now up! Make sure to leave this window open.", text_color="green")
-
-        
-        except InvalidID :
-            window.Element("ERROR").Update("An error occured! Please correct your Client ID!")
-
     else:
         
         try :
@@ -73,6 +61,18 @@ while True:
         
         except InvalidID :
             window.Element("ERROR").Update("An error occured! Please correct your Client ID!")
+
+        except :
+            try :
+        
+                RPC = Presence(values[0])
+                RPC.connect()
+                RPC.update(state=values[1], details=values[2])
+                window.Element("ERROR").Update("Success! Your rich presence is now up! Make sure to leave this window open.", text_color="green")
+
+        
+            except InvalidID :
+                window.Element("ERROR").Update("An error occured! Please correct your Client ID!")
 
  
 
