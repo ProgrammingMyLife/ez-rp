@@ -15,3 +15,6 @@ Go to [this link](https://discord.com/developers/applications) and create a new 
 
 On your application page, you will see a rich presence menu to at the side. After clicking it, you can add images ny clicking the Add Image button. 
 
+
+
+Special thanks to apple craxkhead for adding features like help menu and image keys.
